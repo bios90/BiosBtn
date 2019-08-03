@@ -8,18 +8,14 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.StateListDrawable;
-import android.icu.util.MeasureUnit;
 import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.graphics.ColorUtils;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -186,7 +182,7 @@ public class BiosBtn extends RelativeLayout
 
         icon_padding_horizontal = ta.getDimensionPixelSize(R.styleable.BiosBtn_icon_padding_horizontal, dp2pxInt(4));
         icon_padding_vertical = ta.getDimensionPixelSize(R.styleable.BiosBtn_icon_padding_vertical, dp2pxInt(4));
-        icon_size = ta.getDimensionPixelSize(R.styleable.BiosBtn_icon_size, dp2pxInt(18));
+        icon_size = ta.getDimensionPixelSize(R.styleable.BiosBtn_icon_size_faw, dp2pxInt(18));
         if (ta.hasValue(R.styleable.BiosBtn_icon_color))
         {
             icon_color = ta.getColorStateList(R.styleable.BiosBtn_icon_color).getDefaultColor();
@@ -250,6 +246,7 @@ public class BiosBtn extends RelativeLayout
                 tv_icon_right.setText(faw_text);
                 tv_icon_left.setText(faw_text);
                 tv_icon_right.setPadding(icon_padding_horizontal, icon_padding_vertical, icon_padding_horizontal, icon_padding_vertical);
+                tv_icon_left.setPadding(icon_padding_horizontal, icon_padding_vertical, icon_padding_horizontal, icon_padding_vertical);
                 tv_icon_left.setVisibility(INVISIBLE);
 
                 tv_icon_left.setTextSize(TypedValue.COMPLEX_UNIT_PX,icon_size);
@@ -268,6 +265,7 @@ public class BiosBtn extends RelativeLayout
                 tv_icon_left.setText(faw_text);
                 tv_icon_right.setText(faw_text);
                 tv_icon_left.setPadding(icon_padding_horizontal, icon_padding_vertical, icon_padding_horizontal, icon_padding_vertical);
+                tv_icon_right.setPadding(icon_padding_horizontal, icon_padding_vertical, icon_padding_horizontal, icon_padding_vertical);
                 tv_icon_right.setVisibility(INVISIBLE);
 
                 tv_icon_left.setTextSize(TypedValue.COMPLEX_UNIT_PX,icon_size);
@@ -286,6 +284,7 @@ public class BiosBtn extends RelativeLayout
                 tv_icon_right.setText(faw_text);
                 tv_icon_left.setText(faw_text);
                 tv_icon_right.setPadding(icon_padding_horizontal, icon_padding_vertical, icon_padding_horizontal, icon_padding_vertical);
+                tv_icon_left.setPadding(icon_padding_horizontal, icon_padding_vertical, icon_padding_horizontal, icon_padding_vertical);
                 tv_icon_left.setVisibility(INVISIBLE);
 
                 tv_icon_left.setTextSize(TypedValue.COMPLEX_UNIT_PX,icon_size);

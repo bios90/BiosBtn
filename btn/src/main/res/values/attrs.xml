@@ -18,7 +18,7 @@
         <attr name="faw_text" format="string" />
         <attr name="icon_padding_horizontal" format="dimension" />
         <attr name="icon_padding_vertical" format="dimension" />
-        <attr name="icon_size" format="dimension" />
+        <attr name="icon_size_faw" format="dimension" />
         <attr name="icon_color" format="reference" />
 
         <attr name="gradient_direction">
