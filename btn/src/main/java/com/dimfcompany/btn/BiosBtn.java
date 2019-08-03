@@ -187,7 +187,10 @@ public class BiosBtn extends RelativeLayout
         {
             icon_color = ta.getColorStateList(R.styleable.BiosBtn_icon_color).getDefaultColor();
         }
-        icon_color = Color.parseColor("#ffffff");
+        else
+        {
+            icon_color = Color.parseColor("#ffffff");
+        }
 
         ta.recycle();
     }
@@ -230,8 +233,8 @@ public class BiosBtn extends RelativeLayout
                 tv_icon_right.setPadding(icon_padding_horizontal, icon_padding_vertical, icon_padding_horizontal, icon_padding_vertical);
                 tv_icon_right.setVisibility(INVISIBLE);
 
-                tv_icon_left.setTextSize(TypedValue.COMPLEX_UNIT_PX,icon_size);
-                tv_icon_right.setTextSize(TypedValue.COMPLEX_UNIT_PX,icon_size);
+                tv_icon_left.setTextSize(TypedValue.COMPLEX_UNIT_PX, icon_size);
+                tv_icon_right.setTextSize(TypedValue.COMPLEX_UNIT_PX, icon_size);
                 tv_text.setPadding(text_padding_horizontal, 0, text_padding_horizontal, 0);
                 break;
 
@@ -249,13 +252,13 @@ public class BiosBtn extends RelativeLayout
                 tv_icon_left.setPadding(icon_padding_horizontal, icon_padding_vertical, icon_padding_horizontal, icon_padding_vertical);
                 tv_icon_left.setVisibility(INVISIBLE);
 
-                tv_icon_left.setTextSize(TypedValue.COMPLEX_UNIT_PX,icon_size);
-                tv_icon_right.setTextSize(TypedValue.COMPLEX_UNIT_PX,icon_size);
+                tv_icon_left.setTextSize(TypedValue.COMPLEX_UNIT_PX, icon_size);
+                tv_icon_right.setTextSize(TypedValue.COMPLEX_UNIT_PX, icon_size);
                 tv_text.setPadding(text_padding_horizontal, 0, text_padding_horizontal, 0);
                 break;
 
             case 3:
-                view = inflate(getContext(),R.layout.la_icon_center,this);
+                view = inflate(getContext(), R.layout.la_icon_center, this);
 
                 tv_text = view.findViewById(R.id.tv_text);
                 tv_icon_left = view.findViewById(R.id.tv_icon_left);
@@ -268,13 +271,13 @@ public class BiosBtn extends RelativeLayout
                 tv_icon_right.setPadding(icon_padding_horizontal, icon_padding_vertical, icon_padding_horizontal, icon_padding_vertical);
                 tv_icon_right.setVisibility(INVISIBLE);
 
-                tv_icon_left.setTextSize(TypedValue.COMPLEX_UNIT_PX,icon_size);
-                tv_icon_right.setTextSize(TypedValue.COMPLEX_UNIT_PX,icon_size);
+                tv_icon_left.setTextSize(TypedValue.COMPLEX_UNIT_PX, icon_size);
+                tv_icon_right.setTextSize(TypedValue.COMPLEX_UNIT_PX, icon_size);
                 tv_text.setPadding(text_padding_horizontal, 0, text_padding_horizontal, 0);
                 break;
 
             case 4:
-                view = inflate(getContext(),R.layout.la_icon_center,this);
+                view = inflate(getContext(), R.layout.la_icon_center, this);
 
                 tv_text = view.findViewById(R.id.tv_text);
                 tv_icon_left = view.findViewById(R.id.tv_icon_left);
@@ -287,8 +290,8 @@ public class BiosBtn extends RelativeLayout
                 tv_icon_left.setPadding(icon_padding_horizontal, icon_padding_vertical, icon_padding_horizontal, icon_padding_vertical);
                 tv_icon_left.setVisibility(INVISIBLE);
 
-                tv_icon_left.setTextSize(TypedValue.COMPLEX_UNIT_PX,icon_size);
-                tv_icon_right.setTextSize(TypedValue.COMPLEX_UNIT_PX,icon_size);
+                tv_icon_left.setTextSize(TypedValue.COMPLEX_UNIT_PX, icon_size);
+                tv_icon_right.setTextSize(TypedValue.COMPLEX_UNIT_PX, icon_size);
                 tv_text.setPadding(text_padding_horizontal, 0, text_padding_horizontal, 0);
                 break;
 
@@ -303,7 +306,7 @@ public class BiosBtn extends RelativeLayout
 
         tv_text.setTextColor(getTextIconColor(false));
         tv_text.setTypeface(typeface);
-        tv_text.setTextSize(TypedValue.COMPLEX_UNIT_PX,text_size);
+        tv_text.setTextSize(TypedValue.COMPLEX_UNIT_PX, text_size);
 
         view.setPadding(padding, padding, padding, padding);
     }
@@ -400,7 +403,7 @@ public class BiosBtn extends RelativeLayout
                 {
                         manipulateColor(color, 0.8f),
                         manipulateColor(color, 0.8f),
-                        text_color
+                        color
                 };
 
         return new ColorStateList(states, colors);
