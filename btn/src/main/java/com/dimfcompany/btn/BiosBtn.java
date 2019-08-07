@@ -14,6 +14,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.graphics.ColorUtils;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -154,14 +155,21 @@ public class BiosBtn extends RelativeLayout
         text_padding_horizontal = ta.getDimensionPixelSize(R.styleable.BiosBtn_text_padding_horizontal, dp2pxInt(16));
         padding = ta.getDimensionPixelSize(R.styleable.BiosBtn_android_padding, dp2pxInt(10));
 
-        if (ta.hasValue(R.styleable.BiosBtn_font))
+        typeface = Typeface.createFromAsset(getContext().getAssets(), "monbold.ttf");
+        if (ta.hasValue(R.styleable.BiosBtn_btn_font))
         {
-            typeface = ResourcesCompat.getFont(getContext(), ta.getResourceId(R.styleable.BiosBtn_font, 999));
+            try
+            {
+                String font_str = ta.getString(R.styleable.BiosBtn_btn_font);
+                typeface = Typeface.createFromAsset(getContext().getAssets(), font_str);
+            }
+            catch (Exception e)
+            {
+                Log.e(TAG, "initAttributes: Error while setting font, will use default");
+            }
+
         }
-        else
-        {
-            typeface = Typeface.createFromAsset(getContext().getAssets(), "monbold.ttf");
-        }
+
 
         text = ta.getString(R.styleable.BiosBtn_text);
         if (text == null)

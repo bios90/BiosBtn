@@ -10,7 +10,7 @@
         <attr name="stroke_width" format="dimension" />
         <attr name="stroke_color" format="reference" />
         <attr name="text_color" format="reference" />
-        <attr name="font" format="reference" />
+        <attr name="btn_font" format="string" />
         <attr name="android:textSize" format="dimension" />
         <attr name="android:padding" format="dimension" />
         <attr name="text" format="string" />
