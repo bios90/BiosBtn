@@ -348,6 +348,13 @@ public class BiosBtn extends RelativeLayout
     {
         GradientDrawable drawable = (GradientDrawable) getResources().getDrawable(R.drawable.btn_bg);
         drawable.setCornerRadii(new float[]{corner_radius, corner_radius, corner_radius, corner_radius, corner_radius, corner_radius, corner_radius, corner_radius});
+
+        int stroke_real_color = stroke_color;
+        if (dark)
+        {
+            stroke_real_color = manipulateColor(stroke_color, 0.8f);
+        }
+
         drawable.setStroke(stroke_width, stroke_color);
 
         if (!gradient)
