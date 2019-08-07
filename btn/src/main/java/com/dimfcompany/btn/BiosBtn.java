@@ -44,6 +44,7 @@ public class BiosBtn extends RelativeLayout
     private int icon_size;
     private int icon_color;
     private int minWidth;
+    private int maxWidth;
 
     private int btn_type;
 
@@ -202,6 +203,7 @@ public class BiosBtn extends RelativeLayout
         }
 
         minWidth = ta.getDimensionPixelSize(R.styleable.BiosBtn_android_minWidth, 999999);
+        maxWidth = ta.getDimensionPixelSize(R.styleable.BiosBtn_android_maxWidth, 999999);
 
         ta.recycle();
     }
@@ -327,18 +329,27 @@ public class BiosBtn extends RelativeLayout
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
     {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        int width = view.getLayoutParams().width;
-        int height = view.getLayoutParams().height;
 
-        if (minWidth != 999999 && view.getLayoutParams().width < minWidth)
+        int real_width = MeasureSpec.getSize(widthMeasureSpec);
+        int real_height = MeasureSpec.getSize(heightMeasureSpec);
+        Log.e(TAG, "onMeasure: Current width is " + real_width + " And min width is " + minWidth);
+
+        if (minWidth != 999999 && real_width < minWidth)
         {
+            real_width = minWidth;
             view.getLayoutParams().width = minWidth;
+        }
+
+        if (maxWidth != 999999 && real_width > maxWidth)
+        {
+            real_width = maxWidth;
+            view.getLayoutParams().width = maxWidth;
         }
 
         View rootview = view.findViewById(R.id.la_root);
 
-        rootview.getLayoutParams().width = width;
-        rootview.getLayoutParams().height = height;
+        rootview.getLayoutParams().width = real_width;
+        rootview.getLayoutParams().height = real_height;
     }
 
     private static int dp2pxInt(float dp)
