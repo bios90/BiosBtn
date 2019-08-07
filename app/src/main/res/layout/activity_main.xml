@@ -12,9 +12,9 @@
     <com.dimfcompany.btn.BiosBtn
         android:id="@+id/btn_test"
 
-        app:btn_font="monlight.ttf"
+        app:btn_font="opbold.ttf"
         app:icon_color="@color/colorAccent"
-        app:text_color="@color/colorPrimaryDark"
+        app:text_color="@android:color/white"
         app:gradient="true"
         app:icon_size_faw="12dp"
         app:icon_padding_vertical="4dp"
@@ -22,9 +22,9 @@
         app:faw_text="@string/fa_exclamation"
         app:color_1="@android:color/holo_blue_dark"
         app:color_2="@android:color/holo_purple"
-        app:btn_type="icon_right_end"
+        app:btn_type="no_icon"
         android:layout_width="240dp"
-        android:layout_height="wrap_content"
+        android:layout_height="36dp"
         app:text_padding_horizontal="12dp"
         app:background_color="@color/colorPrimary"
         app:corner_radius="4dp"

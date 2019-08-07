@@ -153,7 +153,7 @@ public class BiosBtn extends RelativeLayout
 
         text_size = ta.getDimensionPixelSize(R.styleable.BiosBtn_android_textSize, dp2pxInt(14));
         text_padding_horizontal = ta.getDimensionPixelSize(R.styleable.BiosBtn_text_padding_horizontal, dp2pxInt(16));
-        padding = ta.getDimensionPixelSize(R.styleable.BiosBtn_android_padding, dp2pxInt(10));
+        padding = ta.getDimensionPixelSize(R.styleable.BiosBtn_android_padding, dp2pxInt(0));
 
         typeface = Typeface.createFromAsset(getContext().getAssets(), "monbold.ttf");
         if (ta.hasValue(R.styleable.BiosBtn_btn_font))
