@@ -20,6 +20,7 @@
         <attr name="icon_padding_vertical" format="dimension" />
         <attr name="icon_size_faw" format="dimension" />
         <attr name="icon_color" format="reference" />
+        <attr name="android:minWidth" format="dimension"/>
 
         <attr name="gradient_direction">
             <enum name="bottom_to_top" value="0" />

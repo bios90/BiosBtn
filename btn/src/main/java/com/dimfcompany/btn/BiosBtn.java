@@ -43,6 +43,7 @@ public class BiosBtn extends RelativeLayout
     private int icon_padding_vertical;
     private int icon_size;
     private int icon_color;
+    private int minWidth;
 
     private int btn_type;
 
@@ -200,6 +201,8 @@ public class BiosBtn extends RelativeLayout
             icon_color = Color.parseColor("#ffffff");
         }
 
+        minWidth = ta.getDimensionPixelSize(R.styleable.BiosBtn_android_minWidth, 999999);
+
         ta.recycle();
     }
 
@@ -326,6 +329,11 @@ public class BiosBtn extends RelativeLayout
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int width = view.getLayoutParams().width;
         int height = view.getLayoutParams().height;
+
+        if (minWidth != 999999 && view.getLayoutParams().width < minWidth)
+        {
+            view.getLayoutParams().width = minWidth;
+        }
 
         View rootview = view.findViewById(R.id.la_root);
 

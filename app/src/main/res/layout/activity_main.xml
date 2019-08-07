@@ -12,6 +12,7 @@
     <com.dimfcompany.btn.BiosBtn
         android:id="@+id/btn_test"
 
+        android:minWidth="140dp"
         app:btn_font="opbold.ttf"
         app:icon_color="@color/colorAccent"
         app:text_color="@android:color/white"
@@ -23,7 +24,7 @@
         app:color_1="@android:color/holo_blue_dark"
         app:color_2="@android:color/holo_purple"
         app:btn_type="no_icon"
-        android:layout_width="240dp"
+        android:layout_width="wrap_content"
         android:layout_height="36dp"
         app:text_padding_horizontal="12dp"
         app:background_color="@color/colorPrimary"
