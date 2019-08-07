@@ -226,6 +226,7 @@ public class BiosBtn extends RelativeLayout
             case 0:
                 view = inflate(getContext(), R.layout.la_no_icon, this);
                 tv_text = view.findViewById(R.id.tv_text);
+                tv_text.setPadding(text_padding_horizontal, 0, text_padding_horizontal, 0);
                 break;
             case 1:
                 view = inflate(getContext(), R.layout.la_icon_end, this);
