@@ -202,8 +202,8 @@ public class BiosBtn extends RelativeLayout
             icon_color = Color.parseColor("#ffffff");
         }
 
-        minWidth = ta.getDimensionPixelSize(R.styleable.BiosBtn_min_width, 999999);
-        maxWidth = ta.getDimensionPixelSize(R.styleable.BiosBtn_max_width, 999999);
+        minWidth = ta.getDimensionPixelSize(R.styleable.BiosBtn_android_minWidth, 999999);
+        maxWidth = ta.getDimensionPixelSize(R.styleable.BiosBtn_android_maxWidth, 999999);
 
         ta.recycle();
     }
@@ -330,12 +330,15 @@ public class BiosBtn extends RelativeLayout
     {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
-        int real_width = MeasureSpec.getSize(widthMeasureSpec);
-        int real_height = MeasureSpec.getSize(heightMeasureSpec);
-
-        int width_mode = MeasureSpec.getMode(widthMeasureSpec);
-        Log.e(TAG, "onMeasure: Current width is " + real_width + " And min width is " + minWidth);
-
+//        int real_width = MeasureSpec.getSize(widthMeasureSpec);
+//        int real_height = MeasureSpec.getSize(heightMeasureSpec);
+//
+//        int width_mode = MeasureSpec.getMode(widthMeasureSpec);
+//        Log.e(TAG, "onMeasure: Current width is " + real_width + " And min width is " + minWidth);
+//
+//        View rootview = view.findViewById(R.id.la_root);
+//
+//
 //        if (minWidth != 999999 && real_width < minWidth)
 //        {
 //            Log.e(TAG, "onMeasure: LEss than min!!!" );
@@ -349,14 +352,15 @@ public class BiosBtn extends RelativeLayout
 //            real_width = maxWidth;
 //            view.getLayoutParams().width = maxWidth;
 //        }
-
-        View rootview = view.findViewById(R.id.la_root);
-
-        if (width_mode != MeasureSpec.AT_MOST)
-        {
-            rootview.getLayoutParams().width = real_width;
-        }
-        rootview.getLayoutParams().height = real_height;
+//
+//
+//        if (width_mode != MeasureSpec.AT_MOST)
+//        {
+////            rootview.getLayoutParams().width = real_width;
+//        }
+//
+//
+////        rootview.getLayoutParams().height = real_height;
     }
 
     private static int dp2pxInt(float dp)
