@@ -12,7 +12,6 @@
     <com.dimfcompany.btn.BiosBtn
         android:id="@+id/btn_test"
 
-        android:minWidth="190dp"
         app:btn_font="opbold.ttf"
         app:icon_color="@color/colorAccent"
         app:text_color="@android:color/white"

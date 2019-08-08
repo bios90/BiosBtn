@@ -26,5 +26,7 @@ public class MainActivity extends AppCompatActivity
                 Log.e(TAG, "onClick: sdfgmdfg" );
             }
         });
+
+        biosBtn.setText("dfkglsdfkbgjsdfb jdfsbgjkdfhbg");
     }
 }

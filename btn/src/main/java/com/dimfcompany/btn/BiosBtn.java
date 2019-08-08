@@ -468,4 +468,10 @@ public class BiosBtn extends RelativeLayout
         params.setMargins(left, top, right, bottom);
         view.setLayoutParams(params);
     }
+
+    public void setText(String text)
+    {
+        this.text = text;
+        initView();
+    }
 }
