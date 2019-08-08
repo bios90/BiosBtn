@@ -154,7 +154,7 @@ public class BiosBtn extends RelativeLayout
         }
 
         text_size = ta.getDimensionPixelSize(R.styleable.BiosBtn_android_textSize, dp2pxInt(14));
-        text_padding_horizontal = ta.getDimensionPixelSize(R.styleable.BiosBtn_text_padding_horizontal, dp2pxInt(16));
+        text_padding_horizontal = ta.getDimensionPixelSize(R.styleable.BiosBtn_text_padding_horizontal, dp2pxInt(0));
         padding = ta.getDimensionPixelSize(R.styleable.BiosBtn_android_padding, dp2pxInt(0));
 
         typeface = Typeface.createFromAsset(getContext().getAssets(), "monbold.ttf");
@@ -202,8 +202,8 @@ public class BiosBtn extends RelativeLayout
             icon_color = Color.parseColor("#ffffff");
         }
 
-        minWidth = ta.getDimensionPixelSize(R.styleable.BiosBtn_android_minWidth, 999999);
-        maxWidth = ta.getDimensionPixelSize(R.styleable.BiosBtn_android_maxWidth, 999999);
+        minWidth = ta.getDimensionPixelSize(R.styleable.BiosBtn_min_width, 999999);
+        maxWidth = ta.getDimensionPixelSize(R.styleable.BiosBtn_max_width, 999999);
 
         ta.recycle();
     }
@@ -332,28 +332,31 @@ public class BiosBtn extends RelativeLayout
 
         int real_width = MeasureSpec.getSize(widthMeasureSpec);
         int real_height = MeasureSpec.getSize(heightMeasureSpec);
+
+        int width_mode = MeasureSpec.getMode(widthMeasureSpec);
         Log.e(TAG, "onMeasure: Current width is " + real_width + " And min width is " + minWidth);
 
-        if (minWidth != 999999 && real_width < minWidth)
-        {
-            Log.e(TAG, "onMeasure: LEss than min!!!" );
-            real_width = minWidth;
-            view.getLayoutParams().width = minWidth;
-        }
-
-        if (maxWidth != 999999 && real_width > maxWidth)
-        {
-            Log.e(TAG, "onMeasure: more than Max!!!" );
-            real_width = maxWidth;
-            view.getLayoutParams().width = maxWidth;
-        }
+//        if (minWidth != 999999 && real_width < minWidth)
+//        {
+//            Log.e(TAG, "onMeasure: LEss than min!!!" );
+//            real_width = minWidth;
+//            view.getLayoutParams().width = minWidth;
+//        }
+//
+//        if (maxWidth != 999999 && real_width > maxWidth)
+//        {
+//            Log.e(TAG, "onMeasure: more than Max!!!" );
+//            real_width = maxWidth;
+//            view.getLayoutParams().width = maxWidth;
+//        }
 
         View rootview = view.findViewById(R.id.la_root);
 
-        rootview.getLayoutParams().width = real_width;
+        if (width_mode != MeasureSpec.AT_MOST)
+        {
+            rootview.getLayoutParams().width = real_width;
+        }
         rootview.getLayoutParams().height = real_height;
-
-        Log.e(TAG, "onMeasure: real width "+real_width );
     }
 
     private static int dp2pxInt(float dp)
