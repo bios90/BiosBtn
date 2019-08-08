@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
+    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,28 +10,58 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
-    <com.dimfcompany.btn.BiosBtn
-        android:id="@+id/btn_test"
 
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.dimfcompany.btn.BiosBtn
+        android:id="@+id/btn_1"
+
+        app:gradient="true"
+        app:text="fdfgdfg"
         app:btn_font="opbold.ttf"
         app:icon_color="@color/colorAccent"
         app:text_color="@android:color/white"
-        app:gradient="true"
         app:icon_size_faw="12dp"
         app:icon_padding_vertical="4dp"
         app:icon_padding_horizontal="24dp"
         app:faw_text="@string/fa_exclamation"
-        app:color_1="@android:color/holo_blue_dark"
-        app:color_2="@android:color/holo_purple"
         app:btn_type="no_icon"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="36dp"
         app:text_padding_horizontal="12dp"
         app:background_color="@color/colorPrimary"
         app:corner_radius="4dp"
         app:gradient_direction="left_to_right"
-        app:stroke_width="0dp">
+        app:stroke_width="0dp"/>
 
-    </com.dimfcompany.btn.BiosBtn>
 
-</RelativeLayout>
+
+    <com.dimfcompany.btn.BiosBtn
+        android:layout_alignParentBottom="true"
+        app:text="fdfgdfg"
+        app:btn_font="opbold.ttf"
+        app:icon_color="@color/colorAccent"
+        app:text_color="@android:color/white"
+        app:icon_size_faw="12dp"
+        app:icon_padding_vertical="4dp"
+        app:icon_padding_horizontal="24dp"
+        app:faw_text="@string/fa_exclamation"
+        app:btn_type="no_icon"
+        android:layout_width="150dp"
+        android:layout_height="36dp"
+        app:text_padding_horizontal="12dp"
+        app:background_color="@color/colorPrimary"
+        app:corner_radius="4dp"
+        app:gradient_direction="left_to_right"
+        app:stroke_width="0dp"/>
+
+</LinearLayout>
+
+
+
+
+
+</LinearLayout>

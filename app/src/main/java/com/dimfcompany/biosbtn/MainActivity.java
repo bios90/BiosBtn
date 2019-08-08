@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BiosBtn biosBtn = findViewById(R.id.btn_test);
+        BiosBtn biosBtn = findViewById(R.id.btn_1);
         biosBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
