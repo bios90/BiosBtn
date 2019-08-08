@@ -330,8 +330,19 @@ public class BiosBtn extends RelativeLayout
     {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
-//        int real_width = MeasureSpec.getSize(widthMeasureSpec);
-//        int real_height = MeasureSpec.getSize(heightMeasureSpec);
+        int real_width = MeasureSpec.getSize(widthMeasureSpec);
+        int real_height = MeasureSpec.getSize(heightMeasureSpec);
+        int width_mode = MeasureSpec.getMode(widthMeasureSpec);
+
+        View rootview = view.findViewById(R.id.la_root);
+
+        if (width_mode != MeasureSpec.AT_MOST)
+        {
+            rootview.getLayoutParams().width = real_width;
+        }
+
+
+        rootview.getLayoutParams().height = real_height;
 //
 //        int width_mode = MeasureSpec.getMode(widthMeasureSpec);
 //        Log.e(TAG, "onMeasure: Current width is " + real_width + " And min width is " + minWidth);

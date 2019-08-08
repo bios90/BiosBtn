@@ -1,34 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipToPadding="false"
-    >
+    android:orientation="vertical">
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
 
+        <com.dimfcompany.btn.BiosBtn
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            app:btn_type="icon_right_end"
+            app:faw_text="@string/fa_times"
+            app:icon_padding_horizontal="8dp"
+            app:text="Отмена" />
 
-<LinearLayout
-    android:layout_centerInParent="true"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <com.dimfcompany.btn.BiosBtn
-        app:icon_padding_horizontal="8dp"
-        android:layout_width="200dp"
-        android:layout_height="32dp"
-        app:btn_type="no_icon"
-        app:faw_text="@string/fa_times"
-        app:text="Отмена"/>
-
-</LinearLayout>
-
-
-
+    </LinearLayout>
 
 
 </RelativeLayout>
