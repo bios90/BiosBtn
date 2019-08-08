@@ -336,12 +336,14 @@ public class BiosBtn extends RelativeLayout
 
         if (minWidth != 999999 && real_width < minWidth)
         {
+            Log.e(TAG, "onMeasure: LEss than min!!!" );
             real_width = minWidth;
             view.getLayoutParams().width = minWidth;
         }
 
         if (maxWidth != 999999 && real_width > maxWidth)
         {
+            Log.e(TAG, "onMeasure: more than Max!!!" );
             real_width = maxWidth;
             view.getLayoutParams().width = maxWidth;
         }
@@ -350,6 +352,8 @@ public class BiosBtn extends RelativeLayout
 
         rootview.getLayoutParams().width = real_width;
         rootview.getLayoutParams().height = real_height;
+
+        Log.e(TAG, "onMeasure: real width "+real_width );
     }
 
     private static int dp2pxInt(float dp)
