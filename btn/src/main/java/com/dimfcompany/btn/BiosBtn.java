@@ -20,6 +20,8 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.dimfcompany.biosbtn.R;
+
 public class BiosBtn extends RelativeLayout
 {
     private static final String TAG = "BiosBtn";
@@ -387,12 +389,12 @@ public class BiosBtn extends RelativeLayout
 
     public GradientDrawable getSingleDrawable(boolean dark)
     {
-        GradientDrawable drawable = (GradientDrawable) getResources().getDrawable(R.drawable.btn_bg);
+
+        GradientDrawable drawable = (GradientDrawable) ResourcesCompat.getDrawable(getResources(), R.drawable.btn_bg, null);
         drawable.setCornerRadii(new float[]{corner_radius, corner_radius, corner_radius, corner_radius, corner_radius, corner_radius, corner_radius, corner_radius});
 
         int stroke_real_color = stroke_color;
-        if (dark)
-        {
+        if (dark) {
             stroke_real_color = manipulateColor(stroke_color, 0.8f);
         }
 

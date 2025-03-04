@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 28
-
+    namespace "com.dimfcompany.biosbtn"
 
     defaultConfig {
         minSdkVersion 19
